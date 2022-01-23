@@ -9,7 +9,7 @@ GRANT ALL PRIVILEGES ON compl.* TO 'compluser'@'%';
 use compl;
 
 create table compl.user (
-  user_id varchar(50) not null primary key,,
+  user_id varchar(50) not null primary key,
   user_name varchar(50),
   user_password varchar(50),
   state varchar(20),
@@ -23,12 +23,11 @@ create table compl.user (
 
 create table compl.user_authorities (
   user_id varchar(50) not null,
-  authority varchar(50) not null,
-  primary key (user_id, authority)
+  authority varchar(50) not null
 ) character set utf8;
 
 create table compl.compliment (
-  compliment_seq varchar(50) not null primary key,
+  compliment_seq int not null primary key,
   sender_id varchar(50),
   sender_name varchar(50),
   receiver_id varchar(50),
@@ -43,13 +42,13 @@ create table compl.compliment (
 ) character set utf8;
 
 create table compl.compliment_like (
-  like_seq varchar(50) not null primary key,
+  like_seq int not null primary key,
   compliment_seq varchar(50),
   user_id varchar(50)
 ) character set utf8;
 
 create table compl.log (
-  log_seq varchar(50) not null primary key,
+  log_seq int not null primary key,
   log varchar(2000),
   user_id varchar(50),
   created_at datetime,
