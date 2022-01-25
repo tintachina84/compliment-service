@@ -1,11 +1,15 @@
-package com.tintachina.experimental.compliment.adapter.out;
+package com.tintachina.experimental.compliment.adapter.out.persistence;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.tintachina.experimental.compliment.domain.UserStatus;
 
 import lombok.Builder;
 import lombok.Value;
@@ -17,30 +21,28 @@ public class UserEntity {
     @Id
     private String userId;
 
-    @Column
+    @Column(nullable = false)
     private String userName;
 
-    @Column
+    @Column(nullable = false)
     private String userPassword;
 
     @Column
-    private String state;
+    @Enumerated(EnumType.STRING)
+    private UserStatus state;
 
-    @Column
+    @Column(nullable = false)
     private BigInteger point;
 
-    @Column
+    @Column(nullable = false)
     private BigInteger sentPoint;
 
-    @Column
+    @Column(nullable = false)
     private BigInteger receivedPoint;
 
-    @Column
     private LocalDateTime createdAt;
 
-    @Column
     private LocalDateTime updatedAt;
-    
-    @Column
+
     private LocalDateTime deletedAt;
 }

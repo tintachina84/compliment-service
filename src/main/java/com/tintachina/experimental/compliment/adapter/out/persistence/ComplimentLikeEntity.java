@@ -1,7 +1,8 @@
-package com.tintachina.experimental.compliment.adapter.out;
+package com.tintachina.experimental.compliment.adapter.out.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,12 +15,12 @@ import lombok.Value;
 public class ComplimentLikeEntity {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long likeSeq;
 
-    @Column
+    @Column(nullable = false)
     private String complimentSeq;
 
-    @Column
+    @Column(nullable = false)
     private String userId;
 }

@@ -1,4 +1,4 @@
-package com.tintachina.experimental.compliment.adapter.out;
+package com.tintachina.experimental.compliment.adapter.out.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -10,9 +10,9 @@ import lombok.Value;
 @Builder
 @Table(name = "user_authority")
 public class UserAuthoritiesEntity {
-    @Column
+    @Column(nullable = false)
     private String userId;
 
-    @Column
+    @Column(nullable = false)
     private String authority;
 }

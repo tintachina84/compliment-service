@@ -2,7 +2,6 @@ package com.tintachina.experimental.compliment.domain;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.Value;
 import lombok.AllArgsConstructor;
 
