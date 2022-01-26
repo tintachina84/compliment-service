@@ -1,5 +1,7 @@
 package com.tintachina.experimental.compliment.adapter.out.persistence;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
@@ -22,6 +24,7 @@ public class UserRepositoryTest {
     @DisplayName("유저 생성 테스트")
     public void createUserTest() {
         UserEntity user = UserEntity.builder()
+                            .id(1L)
                             .userId("USER1")
                             .userName("USER1")
                             .userPassword("password")
@@ -33,6 +36,6 @@ public class UserRepositoryTest {
                             .build();
         
         UserEntity savedUser = this.userRepository.save(user);
-        System.out.println(savedUser);
+        assertTrue(user.equals(savedUser));
     }
 }

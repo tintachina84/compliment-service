@@ -3,6 +3,7 @@ package com.tintachina.experimental.compliment.adapter.out.persistence;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ import lombok.Value;
 
 @Value
 @Builder
+@Entity
 @Table(name = "log")
 public class LogEntity {
     @Id
